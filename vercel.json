@@ -1,8 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "api/open_id.py": {
-      "runtime": "python3.13"
-    }
-  }
+  "builds": [
+    { "src": "api/open_id.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "api/open_id.py" }
+  ]
 }
